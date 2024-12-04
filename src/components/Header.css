@@ -1,0 +1,32 @@
+header {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+.header-icon {
+    display: flex;
+    align-items: center;
+    color: blue;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.header-nav {
+    flex: 1;
+    margin-left: 2em;
+    display: flex;
+    gap: 0.5em;
+}
+
+.header-nav button {
+    border: none;
+    font-size: 1.2em;
+    background: none;
+}
+
+.header-nav button:hover {
+    border-bottom: solid 1px black;
+}

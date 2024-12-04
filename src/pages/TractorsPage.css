@@ -1,0 +1,14 @@
+.tractor-card {
+    display: flex;
+    align-items: start;
+    gap: 0.5em;
+    margin-bottom: 1em;
+}
+
+.tractor-card h2 {
+    margin-top: 0;
+}
+
+.tractor-card img {
+    width: 20em;
+}

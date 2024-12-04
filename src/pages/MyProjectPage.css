@@ -1,0 +1,13 @@
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-card img {
+    width: 30em;
+}
+
+.project-card th {
+    text-align: start;
+}

@@ -1,0 +1,29 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25em;
+}
+
+.login-form label {
+    width: 17.5em;
+    color: grey;
+}
+
+.login-form input {
+    padding:0.5em;
+    width: 20em;
+}
+
+.login-form button {
+    margin-top: 1em;
+    width: 12em;
+    font-size: 1.2em;
+    padding: 0.5em;
+    background-color: aliceblue;
+}
+
+.login-form .button-secondary {
+    background-color: white;
+    border: none;
+}

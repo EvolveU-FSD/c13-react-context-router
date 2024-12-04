@@ -1,8 +1,12 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import LoginIcon from "./LoginIcon"
 
 import './LoginBar.css'
-export default function LoginBar({ user, setPage, setUser }) {
+import LoginContext from "../LoginContext"
+export default function LoginBar({ setPage }) {
+
+    const { user, setUser } = useContext(LoginContext)
+    
     const [menuOpen, setMenuOpen] = useState(false)    
 
     function togglePopup() {

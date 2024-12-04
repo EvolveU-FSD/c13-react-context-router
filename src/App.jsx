@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import TractorsPage from './pages/TractorsPage'
 import MyProjectPage from './pages/MyProjectPage'
 import LoginPage from './pages/LoginPage'
+import LoginContext from './LoginContext'
 
 function App() {
 
@@ -11,12 +12,12 @@ function App() {
   const [page, setPage] = useState("Home")
 
   return (
-    <>
-      { page === "Login" && <LoginPage setPage={setPage} setUser={setUser}/>}
-      { page === "Home" && <HomePage setPage={setPage} user={user} setUser={setUser}/>}
-      { page === "Tractors" && <TractorsPage setPage={setPage} user={user} setUser={setUser}/>}
-      { page === "MyProject" && <MyProjectPage setPage={setPage} user={user} setUser={setUser}/>}
-    </>
+    <LoginContext.Provider value={ {user, setUser} } >
+      { page === "Login" && <LoginPage setPage={setPage} />}
+      { page === "Home" && <HomePage setPage={setPage} />}
+      { page === "Tractors" && <TractorsPage setPage={setPage} />}
+      { page === "MyProject" && <MyProjectPage setPage={setPage} />}
+    </LoginContext.Provider>
   )
 }
 

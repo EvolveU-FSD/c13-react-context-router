@@ -1,10 +1,13 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { login } from '../api'
 
 import TractorIcon from '../components/Tractor'
 import './LoginPage.css'
+import LoginContext from '../LoginContext'
 
-export default function LoginPage({setUser, setPage}) {
+export default function LoginPage({ setPage}) {
+    
+    const { setUser } = useContext(LoginContext)
 
     const [loginError, setLoginError] = useState('')
 

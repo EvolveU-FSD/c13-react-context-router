@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { getTractors } from "../api";
 import Header from "../components/Header";
 
 import "./Page.css"
 import "./TractorsPage.css"
+import LoginContext from "../LoginContext";
 
 function Tractor({user, tractor}) {
     return (
@@ -25,7 +26,8 @@ function Tractor({user, tractor}) {
     )
 }
 
-export default function TractorsPage({setPage, user, setUser}) {
+export default function TractorsPage({setPage}) {
+    const { user } = useContext(LoginContext)
     const [tractors, setTractors] = useState([])
 
     useEffect(() => {
@@ -33,7 +35,7 @@ export default function TractorsPage({setPage, user, setUser}) {
     }, [])
     
     return (<>
-        <Header setPage={setPage} user={user} setUser={setUser}/>
+        <Header setPage={setPage}/>
         <div className="page-content">
             <h1>Tractors</h1>
             <p>Recent conversions that are up for sale!</p>

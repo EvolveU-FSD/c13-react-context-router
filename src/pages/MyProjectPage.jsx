@@ -3,9 +3,9 @@ import myTractor from '../assets/westfalia-combine.jpg'
 
 import "./Page.css"
 import "./MyProjectPage.css"
-export default function MyProjectPage({setPage, user}) {
+export default function MyProjectPage({setPage, user, setUser}) {
     return (<>
-        <Header setPage={setPage} user={user} />
+        <Header setPage={setPage} user={user} setUser={setUser} />
         <div className="page-content project-card">
             <h1>Custom Order #7</h1>
             <img src={myTractor} />

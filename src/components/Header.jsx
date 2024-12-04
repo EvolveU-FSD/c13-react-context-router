@@ -3,7 +3,7 @@ import TractorIcon from "./Tractor"
 import "./Header.css"
 import LoginBar from "./LoginBar"
 
-export default function Header({ setPage, user}) {
+export default function Header({ setPage, user, setUser}) {
     return (
         <header>
             <div className="header-icon"><TractorIcon size={40}/>Tractorify</div>
@@ -12,7 +12,7 @@ export default function Header({ setPage, user}) {
                 <button onClick={() => setPage("Tractors")}>Tractors</button>
                 {user && <button onClick={() => setPage("MyProject")}>My Project</button>}
             </nav>
-            <LoginBar user={user} setPage={setPage}/>
+            <LoginBar user={user} setPage={setPage} setUser={setUser}/>
         </header>
     )
 }

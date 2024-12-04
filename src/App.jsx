@@ -13,9 +13,9 @@ function App() {
   return (
     <>
       { page === "Login" && <LoginPage setPage={setPage} setUser={setUser}/>}
-      { page === "Home" && <HomePage setPage={setPage} user={user}/>}
-      { page === "Tractors" && <TractorsPage setPage={setPage} user={user}/>}
-      { page === "MyProject" && <MyProjectPage setPage={setPage} user={user}/>}
+      { page === "Home" && <HomePage setPage={setPage} user={user} setUser={setUser}/>}
+      { page === "Tractors" && <TractorsPage setPage={setPage} user={user} setUser={setUser}/>}
+      { page === "MyProject" && <MyProjectPage setPage={setPage} user={user} setUser={setUser}/>}
     </>
   )
 }

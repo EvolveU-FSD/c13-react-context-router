@@ -25,7 +25,7 @@ function Tractor({user, tractor}) {
     )
 }
 
-export default function TractorsPage({setPage, user}) {
+export default function TractorsPage({setPage, user, setUser}) {
     const [tractors, setTractors] = useState([])
 
     useEffect(() => {
@@ -33,7 +33,7 @@ export default function TractorsPage({setPage, user}) {
     }, [])
     
     return (<>
-        <Header setPage={setPage} user={user}/>
+        <Header setPage={setPage} user={user} setUser={setUser}/>
         <div className="page-content">
             <h1>Tractors</h1>
             <p>Recent conversions that are up for sale!</p>

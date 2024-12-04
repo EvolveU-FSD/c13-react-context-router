@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { getTractors } from "../api";
 import Header from "../components/Header";
 

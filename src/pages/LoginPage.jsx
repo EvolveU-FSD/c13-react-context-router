@@ -1,13 +1,12 @@
 import { useContext, useState } from 'react'
-import { login } from '../api'
 
 import TractorIcon from '../components/Tractor'
 import './LoginPage.css'
 import LoginContext from '../LoginContext'
 
 export default function LoginPage({ setPage}) {
-    
-    const { setUser } = useContext(LoginContext)
+
+    const { login } = useContext(LoginContext)
 
     const [loginError, setLoginError] = useState('')
 
@@ -16,13 +15,12 @@ export default function LoginPage({ setPage}) {
         const username = document.getElementById('username').value
         const password = document.getElementById('username').value
         login(username, password)
-            .then(setUser)
-            .then(() => {
-                setPage("Home")
-            })
-            .catch((err) => {
-                setLoginError(err.message)
-            })
+        .then(() => {
+            setPage("Home")
+        })
+        .catch((err) => {
+            setLoginError(err.message)
+        })
     }
 
     return (

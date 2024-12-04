@@ -2,21 +2,16 @@ import { useContext, useState } from "react"
 import LoginIcon from "./LoginIcon"
 
 import './LoginBar.css'
-import LoginContext, { WhenLoggedIn, WhenNotLoggedIn } from "../LoginContext"
+import LoginContext, { WhenNotLoggedIn } from "../LoginContext"
 export default function LoginBar({ setPage }) {
 
-    const { user, setUser } = useContext(LoginContext)
+    const { user, logout } = useContext(LoginContext)
 
     const [menuOpen, setMenuOpen] = useState(false)    
 
     function togglePopup() {
         setMenuOpen(!menuOpen)
     }
-
-    function logout() {
-        setUser(null)
-    }
-
     return (
         <>
             { user && 

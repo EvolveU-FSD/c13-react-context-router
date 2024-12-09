@@ -1,9 +1,9 @@
 import Header from "../components/Header";
 
 import "./Page.css"
-export default function HomePage({setPage}) {
+export default function HomePage() {
     return (<>
-        <Header setPage={setPage}/>
+        <Header />
         <div className="page-content">
             <h1>Home</h1>
             <p>Introducing <b>Tractorify</b> – the innovative service that transforms your used vehicles into fully functional farm equipment! Whether you have an old truck, SUV, or sedan, we can give it a new life by converting it into a powerful tractor, plow, or other essential farm machinery.</p>

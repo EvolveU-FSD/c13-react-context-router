@@ -21,12 +21,12 @@ header {
     gap: 0.5em;
 }
 
-.header-nav button {
+.header-nav a {
     border: none;
     font-size: 1.2em;
     background: none;
 }
 
-.header-nav button:hover {
+.header-nav a:hover {
     border-bottom: solid 1px black;
 }

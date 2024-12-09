@@ -3,20 +3,22 @@ import { useContext, useState } from 'react'
 import TractorIcon from '../components/Tractor'
 import './LoginPage.css'
 import LoginContext from '../LoginContext'
+import { useNavigate } from 'react-router'
 
-export default function LoginPage({ setPage}) {
+export default function LoginPage() {
 
     const { login } = useContext(LoginContext)
+    const navigate = useNavigate()
 
     const [loginError, setLoginError] = useState('')
 
     function tryLogin() {
         setLoginError('')
         const username = document.getElementById('username').value
-        const password = document.getElementById('username').value
+        const password = document.getElementById('password').value
         login(username, password)
         .then(() => {
-            setPage("Home")
+            navigate("/")
         })
         .catch((err) => {
             setLoginError(err.message)
@@ -33,7 +35,7 @@ export default function LoginPage({ setPage}) {
             <input id="password" type="password" />
             <div>{loginError}</div>
             <button onClick={tryLogin}>Login</button>
-            <button className="button-secondary" onClick={() => setPage("Home")}>Cancel</button>
+            <button className="button-secondary" onClick={() => navigate('/')}>Cancel</button>
         </div>
     )
 }

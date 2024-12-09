@@ -3,20 +3,21 @@ import TractorIcon from "./Tractor"
 import "./Header.css"
 import LoginBar from "./LoginBar"
 import { WhenLoggedIn } from "../LoginContext"
+import { Link } from "react-router"
 
-export default function Header({ setPage }) {
+export default function Header() {
 
     return (
         <header>
             <div className="header-icon"><TractorIcon size={40}/>Tractorify</div>
             <nav className="header-nav">
-                <button onClick={() => setPage("Home")}>Home</button>
-                <button onClick={() => setPage("Tractors")}>Tractors</button>
+                <Link to="/">Home</Link>
+                <Link to="/tractors">Tractors</Link>
                 <WhenLoggedIn>
-                    <button onClick={() => setPage("MyProject")}>My Project</button>
+                    <Link to="/my-project">My Project</Link>
                 </WhenLoggedIn>
             </nav>
-            <LoginBar setPage={setPage}/>
+            <LoginBar/>
         </header>
     )
 }

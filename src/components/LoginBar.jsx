@@ -3,9 +3,12 @@ import LoginIcon from "./LoginIcon"
 
 import './LoginBar.css'
 import LoginContext, { WhenNotLoggedIn } from "../LoginContext"
-export default function LoginBar({ setPage }) {
+import { useNavigate } from "react-router"
+
+export default function LoginBar() {
 
     const { user, logout } = useContext(LoginContext)
+    const navigate = useNavigate()
 
     const [menuOpen, setMenuOpen] = useState(false)    
 
@@ -23,7 +26,7 @@ export default function LoginBar({ setPage }) {
                 </div>
             }
             <WhenNotLoggedIn>
-                <div className="login-prompt" onClick={() => setPage("Login")} >Login <LoginIcon /></div>
+                <div className="login-prompt" onClick={() => navigate('/login')} >Login <LoginIcon /></div>
             </WhenNotLoggedIn>
         </>
     )

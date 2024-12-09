@@ -17,9 +17,6 @@ export default function LoginPage() {
         const username = document.getElementById('username').value
         const password = document.getElementById('password').value
         login(username, password)
-        .then(() => {
-            navigate("/")
-        })
         .catch((err) => {
             setLoginError(err.message)
         })
